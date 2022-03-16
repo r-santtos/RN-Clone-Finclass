@@ -52,19 +52,19 @@ const databaseApi = () => {
       "id": "1",
       "title": "Title",
       "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
-      "urlImg": urlImgs.bookBruno
+      "urlImg": urlImgs.bookPrimo
     },
     {
       "id": "2",
       "title": "Title",
       "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
-      "urlImg": urlImgs.bookThiago
+      "urlImg": urlImgs.bookBruno
     },
     {
       "id": "3",
       "title": "Title",
       "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
-      "urlImg": urlImgs.brokerTiagoReis
+      "urlImg": urlImgs.bookPrimo
     },
   ]
 
