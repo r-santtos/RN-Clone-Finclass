@@ -97,11 +97,18 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#fff'
   },
+  header: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
   card: {
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 16,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   boxLeft: {
     flexDirection: 'row',
@@ -130,12 +137,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 8,
   },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  }
 })
 
 export default Dashboard;
