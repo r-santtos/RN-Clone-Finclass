@@ -24,26 +24,47 @@ const databaseApi = () => {
       "broker": "Suno Research,",
       "urlImg": urlImgs.brokerTiagoReis
     },
+    {
+      "id": "4",
+      "specialty": "Investimentos",
+      "name": "Mauricio Bittencourt",
+      "broker": "Velt",
+      "urlImg": urlImgs.brokerMauricio
+    },
+    {
+      "id": "5",
+      "specialty": "Equity",
+      "name": "Guilherme Benchimol",
+      "broker": "XP Investimentos",
+      "urlImg": urlImgs.brokerGuilherme
+    },
+    {
+      "id": "6",
+      "specialty": "Valuation",
+      "name": "Tiago Reis",
+      "broker": "Suno Research,",
+      "urlImg": urlImgs.brokerTiagoReis
+    },
   ]
 
   const findocs = [
     {
       "id": "1",
-      "name": "",
-      "author": "",
-      "urlImg": ""
+      "title": "Title",
+      "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
+      "urlImg": urlImgs.bookBruno
     },
     {
       "id": "2",
-      "name": "",
-      "author": "",
-      "urlImg": ""
+      "title": "Title",
+      "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
+      "urlImg": urlImgs.bookThiago
     },
     {
       "id": "3",
-      "name": "",
-      "author": "",
-      "urlImg": ""
+      "title": "Title",
+      "descriptions": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
+      "urlImg": urlImgs.brokerTiagoReis
     },
   ]
 
@@ -62,6 +83,24 @@ const databaseApi = () => {
     },
     {
       "id": "3",
+      "name": "Método Financeiro Do Primo Rico",
+      "author": "Thiago Nigro",
+      "urlImg": urlImgs.bookPrimo
+    },
+    {
+      "id": "4",
+      "name": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
+      "author": "Thiago Nigro",
+      "urlImg": urlImgs.bookThiago
+    },
+    {
+      "id": "5",
+      "name": "O que o ensino não te ensina",
+      "author": "Breno Perrucho",
+      "urlImg": urlImgs.bookBruno
+    },
+    {
+      "id": "6",
       "name": "Método Financeiro Do Primo Rico",
       "author": "Thiago Nigro",
       "urlImg": urlImgs.bookPrimo

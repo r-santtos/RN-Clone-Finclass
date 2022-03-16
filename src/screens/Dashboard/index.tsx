@@ -28,65 +28,73 @@ const Dashboard: React.FC<StackDashboard> = ({navigation}) => {
       }}
     >
       {/** COMPONENT FINCLASSES */}
-      <View style={styles.header}>
-        <View style={styles.containerLeft}>
-          <View style={[styles.icon, {borderRadius: 25/2}]} />
-          <Text style={[styles.txt, styles.title]}>
-            Fin<Text style={{color: '#43e4de'}}> classes</Text>
-          </Text>
-        </View>
+      <View style={styles.card}>
+        <View style={styles.header}>
+          <View style={styles.containerLeft}>
+            <View style={[styles.icon, {borderRadius: 25/2}]} />
+            <Text style={[styles.txt, styles.title]}>
+              Fin<Text style={{color: '#43e4de'}}> classes</Text>
+            </Text>
+          </View>
 
-        <View style={styles.containerRight}>
-          <View style={styles.links}>
-            <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
-            <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+          <View>
+            <View style={styles.links}>
+              <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
+              <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+            </View>
           </View>
         </View>
+
+        <FinClasses />
       </View>
-      <FinClasses />
 
       {/** COMPONENT FIN DOCS */}
-      <View style={styles.header}>
-        <View style={styles.containerLeft}>
-          <View style={[styles.icon, {borderRadius: 25/2}]} />
-          <Text style={[styles.txt, styles.title]}>
-            Fin<Text style={{color: '#43e4de'}}> docs</Text>
-          </Text>
-        </View>
+      <View style={styles.card}>
+        <View style={styles.header}>
+          <View style={styles.containerLeft}>
+            <View style={[styles.icon, {borderRadius: 25/2}]} />
+            <Text style={[styles.txt, styles.title]}>
+              Fin<Text style={{color: '#43e4de'}}> docs</Text>
+            </Text>
+          </View>
 
-        <View style={styles.containerRight}>
-          <View style={styles.links}>
-            <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
-            <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+          <View>
+            <View style={styles.links}>
+              <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
+              <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+            </View>
           </View>
         </View>
+        
+        <FinDocs />
       </View>
-      <FinDocs />
 
       {/** COMPONENT FIN BOOKS */}
-      <View style={styles.header}>
-        <View style={styles.containerLeft}>
-          <View style={[styles.icon, {borderRadius: 8}]} />
-          <Text style={[styles.txt, styles.title]}>
-            Fin<Text style={{color: '#43e4de'}}> books</Text>
-          </Text>
-        </View>
+      <View style={styles.card}>
+        <View style={styles.header}>
+          <View style={styles.containerLeft}>
+            <View style={[styles.icon, {borderRadius: 8}]} />
+            <Text style={[styles.txt, styles.title]}>
+              Fin<Text style={{color: '#43e4de'}}> books</Text>
+            </Text>
+          </View>
 
-        <View style={styles.containerRight}>
-          <View style={styles.links}>
-            <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
-            <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+          <View>
+            <View style={styles.links}>
+              <Text style={[styles.txt, {marginRight: 8}]}>ver todos</Text>
+              <MaterialIcons name="arrow-forward-ios" size={11} color="#fff" />
+            </View>
           </View>
         </View>
+        
+        <FinBooks />
       </View>
-      <FinBooks />
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     backgroundColor: '#000',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
@@ -96,22 +104,26 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
 
+  /** CARD */
+  card: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+
   /** HEADER */
   header: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 8,
-    paddingVertical: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
   },
   containerLeft: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start'
-  },
-  containerRight: {
-
   },
   icon: {
     width: 25,

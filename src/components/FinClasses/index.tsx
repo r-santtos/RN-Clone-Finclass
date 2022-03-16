@@ -4,12 +4,38 @@ import {
   ScrollView,
   View,
   Text,
-  Platform,
-  StatusBar
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
+import databaseApi from "../../database";
 
 /** COMPONENT FINCLASSES */
 const FinClasses: React.FC = () => {
+
+  const api = databaseApi();
+
+  const Card = () => {
+    return (
+      <>
+        {api.finclasses.map(({id, specialty, name, broker, urlImg }) => (
+          <TouchableOpacity key={id} style={styles.card}>
+            <ImageBackground
+              source={{ uri: urlImg }}
+              resizeMode={'cover'}
+              style={styles.imageBackground}
+            >
+              <View style={styles.boxShadow}>
+                <Text style={[styles.txt, {color: '#43e4de', textAlign: 'center'}]}>{specialty}</Text>
+                <Text style={[styles.txt, {fontSize: 16, textAlign: 'center'}]}>{name}</Text>
+                <Text style={[styles.txt, {color: 'gray', textAlign: 'center'}]}>{broker}</Text>
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>
+        ))}
+      </>
+    )
+  }
+
   return (
     <ScrollView
       horizontal={true}
@@ -17,14 +43,12 @@ const FinClasses: React.FC = () => {
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        width: '100%',
         alignItems: 'flex-start',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        paddingHorizontal: 8,
       }}
     >
-      <View>
-        <Text style={styles.txt}>Fin Books</Text>
-      </View>
+      <Card />
     </ScrollView>
   )
 }
@@ -33,13 +57,34 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#000',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   txt: {
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: '700',
     color: '#fff'
   },
+  card: {
+    maxWidth: 125,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    marginHorizontal: 8,
+  },
+  imageBackground: {
+    width: 125,
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+
+  },
+  boxShadow: {
+    width: '100%',
+    minHeight: '33%',
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  }
 })
 
 export default FinClasses; 

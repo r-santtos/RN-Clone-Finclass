@@ -4,12 +4,36 @@ import {
   ScrollView,
   View,
   Text,
-  Platform,
-  StatusBar
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
+import databaseApi from "../../database";
 
 /** COMPONENT FINBOOKS */
 const FinBooks: React.FC = () => {
+  const api = databaseApi();
+
+  const Card = () => {
+    return (
+      <>
+        {api.finbooks.map(({id, name, author, urlImg }) => (
+          <TouchableOpacity key={id} style={styles.card}>
+            <ImageBackground
+              source={{ uri: urlImg }}
+              resizeMode={'cover'}
+              style={styles.imageBackground}
+            >
+            </ImageBackground>
+            <View style={styles.boxShadow}>
+              <Text style={[styles.txt, {color: '#43e4de'}]}>{author}</Text>
+              <Text style={[styles.txt, {fontSize: 16}]}>{name}</Text>
+              <Text style={[styles.txt, {color: 'gray'}]}>{author}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </>
+    )
+  }
   return (
     <ScrollView
       horizontal={true}
@@ -17,14 +41,12 @@ const FinBooks: React.FC = () => {
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
-        width: '100%',
         alignItems: 'flex-start',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        paddingHorizontal: 8,
       }}
     >
-      <View>
-        <Text style={styles.txt}>Fin Books</Text>
-      </View>
+      <Card />
     </ScrollView>
   )
 }
@@ -33,13 +55,30 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: '#000',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   txt: {
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: '700',
     color: '#fff'
   },
+  card: {
+    maxWidth: 125,
+    marginHorizontal: 8,
+  },
+  imageBackground: {
+    width: 125,
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  boxShadow: {
+    width: '100%',
+    minHeight: '33%',
+    paddingVertical: 8,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  }
 })
 
 export default FinBooks; 
