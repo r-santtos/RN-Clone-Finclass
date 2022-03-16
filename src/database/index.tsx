@@ -6,42 +6,54 @@ const databaseApi = () => {
     {
       "id": "1",
       "specialty": "Investimentos",
-      "name": "Mauricio Bittencourt",
+      "firstName": "Mauricio",
+      "lastName": "Bittencourt",
+      "fullName": "Mauricio Bittencourt",
       "broker": "Velt",
       "urlImg": urlImgs.brokerMauricio
     },
     {
       "id": "2",
       "specialty": "Equity",
-      "name": "Guilherme Benchimol",
+      "firstName": "Guilherme",
+      "lastName": "Benchimol",
+      "fullName": "Guilherme Benchimol",
       "broker": "XP Investimentos",
       "urlImg": urlImgs.brokerGuilherme
     },
     {
       "id": "3",
       "specialty": "Valuation",
-      "name": "Tiago Reis",
+      "firstName": "Tiago",
+      "lastName": "Reis",
+      "fullName": "Tiago Reis",
       "broker": "Suno Research,",
       "urlImg": urlImgs.brokerTiagoReis
     },
     {
       "id": "4",
       "specialty": "Investimentos",
-      "name": "Mauricio Bittencourt",
+      "firstName": "Mauricio",
+      "lastName": "Bittencourt",
+      "fullName": "Mauricio Bittencourt",
       "broker": "Velt",
       "urlImg": urlImgs.brokerMauricio
     },
     {
       "id": "5",
       "specialty": "Equity",
-      "name": "Guilherme Benchimol",
+      "firstName": "Guilherme",
+      "lastName": "Benchimol",
+      "fullName": "Guilherme Benchimol",
       "broker": "XP Investimentos",
       "urlImg": urlImgs.brokerGuilherme
     },
     {
       "id": "6",
       "specialty": "Valuation",
-      "name": "Tiago Reis",
+      "firstName": "Tiago",
+      "lastName": "Reis",
+      "fullName": "Tiago Reis",
       "broker": "Suno Research,",
       "urlImg": urlImgs.brokerTiagoReis
     },
